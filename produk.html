@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <title>The3rd.CS Store - Produk</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>The3rd.CS Store</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentang.html">Tentang Kami</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+    <a href="checkout.html" class="keranjang-icon"><i class="fas fa-shopping-cart"></i></a>
+  </header>
+  
+  <main>
+    <h2>Produk Terbaru</h2>
+    <div class="produk-container">
+    <div class="produk-item">
+      <img src="fotoproduk/gambar1.jpg" alt="Produk 1" data-deskripsi="deskripsi1" onclick="toggleDeskripsi('deskripsi1')">
+      <h3>Thufail Agung Fathi</h3>
+      <div id="deskripsi1" class="deskripsi">
+        <p>Deskripsi Produk 1</p>
+      </div>
+      <p>Harga: Rp. SOLD OUT !!</p>
+      <a href="#" onclick="tambahKeKeranjang('Produk 1', 'fotoproduk/gambar1.jpg')">Beli Sekarang</a>
+    </div>
+
+    <div class="produk-item">
+      <img src="fotoproduk/gambar2.jpg" alt="Produk 2" data-deskripsi="deskripsi2" onclick="toggleDeskripsi('deskripsi2')">
+      <h3>Muhammad Reza A</h3>
+      <div id="deskripsi2" class="deskripsi">
+        <p>Deskripsi Produk 2</p>
+      </div>
+      <p>Harga: Rp. 200.000 NEGO</p>
+      <a href="#" onclick="tambahKeKeranjang('Produk 2', 'fotoproduk/gambar2.jpg')">Beli Sekarang</a>
+    </div>
+    
+    <div class="produk-item">
+        <img src="fotoproduk/gambar3.jpg" alt="Produk 3" data-deskripsi="deskripsi3" onclick="toggleDeskripsi('deskripsi3')">
+        <h3>Adri Kemal Budiman</h3>
+        <div id="deskripsi3" class="deskripsi">
+            <p>Deskripsi Produk 3</p>
+          </div>
+        <p>Harga: Rp. 200.000 NEGO BENSIN !!</p>
+        <a href="#" onclick="tambahKeKeranjang('Produk 3', 'fotoproduk/gambar3.jpg')">Beli Sekarang</a>
+      </div>
+    </div>
+    <a href="index.html">Kembali ke Beranda</a>
+  </main>
+  
+  <footer>
+    <p>Hak Cipta &copy; 2023 The3rd.CS Store. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
