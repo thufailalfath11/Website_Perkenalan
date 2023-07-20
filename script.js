@@ -94,25 +94,19 @@ function login() {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
 
-  // Anda bisa mengganti URL ini dengan URL ke backend server Anda
-  var url = 'users.json';
+  // Daftar pengguna (username dan password)
+  const users = [
+      { username: 'user1', password: 'password1' },
+      { username: 'user2', password: 'password2' },
+      { username: 'user3', password: 'password3' }
+  ];
 
-  // Menggunakan fetch API untuk mengambil data dari "users.json"
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      var users = data.users;
-      var foundUser = users.find(user => user.username === username && user.password === password);
-      if (foundUser) {
-        alert("Login berhasil!");
-        window.location.href= 'index.html';
-        // Di sini Anda bisa melakukan redirect ke halaman selanjutnya atau memberikan akses ke konten tertentu.
-      } else {
-        alert("Login gagal! Periksa kembali username dan password Anda.");
-      }
-    })
-    .catch(error => {
-      alert("Terjadi kesalahan saat memproses data.");
-      console.error(error);
-    });
+  var foundUser = users.find(user => user.username === username && user.password === password);
+  if (foundUser) {
+      alert("Login berhasil!");
+      // Redirect ke halaman "index.html" setelah login berhasil
+      window.location.href = "index.html";
+  } else {
+      alert("Login gagal! Periksa kembali username dan password Anda.");
+  }
 }
