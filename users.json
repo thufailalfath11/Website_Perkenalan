@@ -1,13 +1,6 @@
-{
-    "users": [
-      {
-        "username": "pengguna",
-        "password": "rahasia"
-      },
-      {
-        "username": "userlain",
-        "password": "passwordlain"
-      }
-    ]
-  }
+[
+  { "username": "pengguna1", "password": "rahasia1" },
+  { "username": "pengguna2", "password": "rahasia2" },
+  { "username": "pengguna3", "password": "rahasia3" }
+]  }
   
