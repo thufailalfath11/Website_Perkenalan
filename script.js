@@ -1,37 +1,37 @@
-let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
 
 function tambahKeKeranjang(namaProduk, gambarProduk) {
   keranjang.push({ nama: namaProduk, gambar: gambarProduk });
   console.log(keranjang);
   alert("Produk berhasil ditambahkan ke keranjang!");
   // Simpan keranjang ke localStorage
-  localStorage.setItem('keranjang', JSON.stringify(keranjang));
+  localStorage.setItem("keranjang", JSON.stringify(keranjang));
   // Redirect ke halaman checkout
   window.location.href = "checkout.html";
 }
 
 function konfirmasiHapusKeranjang() {
-    let konfirmasi = confirm("Apakah Anda yakin ingin menghapus keranjang?");
-    if (konfirmasi) {
-      hapusKeranjang();
-    }
+  let konfirmasi = confirm("Apakah Anda yakin ingin menghapus keranjang?");
+  if (konfirmasi) {
+    hapusKeranjang();
   }
+}
 
 function hapusKeranjang() {
   keranjang = [];
   alert("Keranjang telah kosong!");
-  localStorage.removeItem('keranjang');
+  localStorage.removeItem("keranjang");
   tampilkanCheckout();
 }
 function konfirmasiHapusProduk() {
-    let konfirmasi = confirm("Apakah Anda yakin ingin menghapus Produk?");
-    if (konfirmasi) {
-      hapusProduk();
-    }
+  let konfirmasi = confirm("Apakah Anda yakin ingin menghapus Produk?");
+  if (konfirmasi) {
+    hapusProduk();
   }
+}
 function hapusProduk(index) {
   keranjang.splice(index, 1);
-  localStorage.setItem('keranjang', JSON.stringify(keranjang));
+  localStorage.setItem("keranjang", JSON.stringify(keranjang));
   tampilkanCheckout();
 }
 
@@ -60,7 +60,7 @@ function tampilkanCheckout() {
 
     let hapusButton = document.createElement("button");
     hapusButton.textContent = "Hapus";
-    hapusButton.onclick = function() {
+    hapusButton.onclick = function () {
       hapusProduk(i);
     };
     produk.appendChild(hapusButton);
@@ -74,13 +74,10 @@ function tampilkanCheckout() {
   totalHargaElem.textContent = totalHarga.toLocaleString();
 }
 function toggleDeskripsi(deskripsiId) {
-    let deskripsi = document.getElementById(deskripsiId);
-    let deskripsiText = deskripsi.textContent.trim();
-    alert(deskripsiText);
-  }
-
-
-
+  let deskripsi = document.getElementById(deskripsiId);
+  let deskripsiText = deskripsi.textContent.trim();
+  alert(deskripsiText);
+}
 
 /*
 function toggleDeskripsi(deskripsiId) {

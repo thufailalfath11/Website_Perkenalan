@@ -1,0 +1,156 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Menambahkan animasi pada ikon keranjang */
+  .keranjang-icon {
+    animation: bounce 0.3s infinite alternate;
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-5px);
+    }
+  }
+  h1 {
+    color: #e32121;
+  }
+  h2, h3 {
+    color: black;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* Gaya header */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+  }
+  
+  /* Gaya bagian utama */
+  main {
+    padding: 20px;
+  }
+  
+  /* Gaya halaman Beranda */
+  #index main {
+    text-align: center;
+  }
+  
+  /* Gaya halaman Produk */
+  #produk .produk-item {
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+  }
+  
+  #produk img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Gaya halaman Tentang Kami */
+  #tentang-kami p {
+    text-align: justify;
+  }
+  
+  /* Gaya halaman Kontak */
+  #kontak form label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  #kontak form input,
+  #kontak form textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  
+  #kontak form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Gaya footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  /* kontainer JPG */
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .keranjang-icon {
+    float: right;
+    margin-top: -40px;
+    font-size: 24px;
+    color: #fafafa;
+    text-decoration: underline;
+  }
+  .deskripsi {
+    display: none;
+    margin-top: 10px;
+  }
+  .produk-item img {
+    transition: transform 0.3s ease;
+    border: 2px solid #000000;
+    border-radius: 4px;
+  }
+  
+  .produk-item img:hover {
+    transform: scale(1.1);
+  }
+ /* Tombol Beli*/
+  beli-sekarang {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .beli-sekarang:hover {
+    background-color: #0056b3;
+  }
+  
+  .beli-sekarang:active {
+    background-color: #003080;
+  }
