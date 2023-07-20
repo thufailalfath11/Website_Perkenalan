@@ -90,53 +90,29 @@ function toggleDeskripsi(deskripsiId) {
   } 
 
 */
-// Simpan data login sementara di variabel objek users
-const users = [
-  { username: 'user1', password: 'password1' },
-  { username: 'user2', password: 'password2' }
-];
+function login() {
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
 
-function login(event) {
-  event.preventDefault();
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  
-  // Periksa apakah username dan password sesuai dengan data login yang ada
-  const user = users.find(u => u.username === username && u.password === password);
+  // Anda bisa mengganti URL ini dengan URL ke backend server Anda
+  var url = 'users.json';
 
-  if (user) {
-    alert('Login berhasil!');
-    // Simpan status login di sessionStorage
-    sessionStorage.setItem('isLoggedIn', true);
-    // Redirect ke halaman beranda setelah login berhasil
-    window.location.href ='index.html';
-  } else {
-    alert('Username atau password salah. Silakan coba lagi.');
-  }
+  // Menggunakan fetch API untuk mengambil data dari "users.json"
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      var users = data.users;
+      var foundUser = users.find(user => user.username === username && user.password === password);
+      if (foundUser) {
+        alert("Login berhasil!");
+        window.location.href= 'index.html';
+        // Di sini Anda bisa melakukan redirect ke halaman selanjutnya atau memberikan akses ke konten tertentu.
+      } else {
+        alert("Login gagal! Periksa kembali username dan password Anda.");
+      }
+    })
+    .catch(error => {
+      alert("Terjadi kesalahan saat memproses data.");
+      console.error(error);
+    });
 }
-//Fungsi untuk toggle dropdown menu
-function toggleDropdown() {
-  const dropdown = document.getElementById('dropdown');
-  dropdown.classList.toggle('show');
-}
-
-// Fungsi untuk logout
-function logout() {
-  sessionStorage.removeItem('isLoggedIn');
-  window.location.href = 'login.html';
-}
-
-// Fungsi untuk memeriksa status login
-function checkLoginStatus() {
-  const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-  const dropdown = document.getElementById('dropdown');
-  
-  if (isLoggedIn) {
-    dropdown.style.display = 'block'; // Tampilkan dropdown menu jika user telah login
-  } else {
-    dropdown.style.display = 'none'; // Sembunyikan dropdown menu jika user belum login
-  }
-}
-
-// Panggil fungsi checkLoginStatus saat halaman dimuat
-checkLoginStatus();

@@ -1,0 +1,13 @@
+{
+    "users": [
+      {
+        "username": "pengguna",
+        "password": "rahasia"
+      },
+      {
+        "username": "userlain",
+        "password": "passwordlain"
+      }
+    ]
+  }
+  
