@@ -110,3 +110,76 @@ function login() {
       alert("Login gagal! Periksa kembali username dan password Anda.");
   }
 }
+// Array untuk menyimpan daftar produk
+const products = [];
+
+function addProduct(event) {
+    event.preventDefault();
+    var name = document.getElementById('name').value;
+    var price = document.getElementById('price').value;
+    var description = document.getElementById('description').value;
+    var image = document.getElementById('image').files[0];
+
+    // Validasi input
+    if (!name || !price || isNaN(price) || !description || !image) {
+        alert("Silakan lengkapi semua field dengan benar.");
+        return;
+    }
+
+    // Buat URL untuk preview gambar
+    var imageUrl = URL.createObjectURL(image);
+
+    // Tambahkan produk ke dalam array produk
+    products.push({ name, price, description, imageUrl });
+
+    // Tampilkan daftar produk
+    displayProducts();
+
+    // Reset form
+    document.getElementById('name').value = '';
+    document.getElementById('price').value = '';
+    document.getElementById('description').value = '';
+    document.getElementById('image').value = '';
+}
+
+function displayProducts() {
+    var productList = document.querySelector('.product-list');
+    productList.innerHTML = '';
+
+    products.forEach(product => {
+        var productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+            <h3>${product.name}</h3>
+            <p>Harga: ${product.price}</p>
+            <p>${product.description}</p>
+            <img src="${product.imageUrl}" alt="${product.name}">
+        `;
+        productList.appendChild(productDiv);
+    });
+}
+function viewProduct(index) {
+  var product = products[index];
+  var queryString = `name=${encodeURIComponent(product.name)}&price=${encodeURIComponent(product.price)}&description=${encodeURIComponent(product.description)}&imageUrl=${encodeURIComponent(product.imageUrl)}`;
+  var url = `produk.html?${queryString}`;
+  window.location.href = url;
+}
+window.onload = function () {
+  // Ambil data produk dari URL parameter
+  var urlParams = new URLSearchParams(window.location.search);
+  var productName = urlParams.get('name');
+  var productPrice = urlParams.get('price');
+  var productDescription = urlParams.get('description');
+  var productImageUrl = urlParams.get('imageUrl');
+
+  // Tampilkan detail produk
+  document.getElementById('product-name').innerText = productName;
+  document.getElementById('product-price').innerText = "Harga: " + productPrice;
+  document.getElementById('product-description').innerText = productDescription;
+  document.getElementById('product-image').src = productImageUrl;
+};
+
+function tambahProduk() {
+  window.location.href = "tambahproduk.html";
+}
+

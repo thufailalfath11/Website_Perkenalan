@@ -64,6 +64,8 @@ p1 {
 a {
   color: lightblue;
   text-decoration: none;
+  margin: auto;
+  padding: auto;
 }
 
 #name1 {
