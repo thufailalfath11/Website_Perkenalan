@@ -105,7 +105,7 @@ function login() {
   if (foundUser) {
       alert("Login berhasil!");
       // Redirect ke halaman "index.html" setelah login berhasil
-      window.location.href = "index.html";
+      window.location.href = "lobi.html";
   } else {
       alert("Login gagal! Periksa kembali username dan password Anda.");
   }

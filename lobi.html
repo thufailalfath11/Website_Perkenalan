@@ -18,19 +18,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>The3rd.CS Store - Checkout</title>
-    <script src="script.js"></script>
+    <title>The3rd.CS Store</title>
   </head>
-  <body onload="tampilkanCheckout()">
+  <body>
     <header>
       <h1>The3rd.CS Store</h1>
       <nav>
         <ul>
-          <li><a href="lobi.html">Beranda</a></li>
           <li><a href="produk.html">Produk</a></li>
           <li><a href="tentang.html">Tentang Kami</a></li>
           <li><a href="kontak.html">Kontak</a></li>
-          <li><a href="login.html">LogOut</a></li>
+          <li><a href="index.html">LogOut</a></li>
         </ul>
       </nav>
       <a href="checkout.html" class="keranjang-icon"
@@ -39,21 +37,28 @@
     </header>
 
     <main>
-      <h2>Checkout</h2>
-      <h3>Produk yang Dibeli:</h3>
-      <ul id="daftar-produk"></ul>
-      <p>Total Harga: Rp. <span id="total-harga"></span></p>
-      <button
-        type="button"
-        class="btn btn-danger"
-        onclick="konfirmasiHapusKeranjang()"
+      <h2>Selamat datang!</h2>
+      <br />
+
+      <h5>
+        <p>
+          Temukan berbagai produk berkualitas dengan harga terbaik dari yang
+          terbaik.
+        </p>
+      </h5>
+      <a
+        href="produk.html"
+        class="btn btn-primary disable"
+        tabindex="-1"
+        role="button"
+        aria-disabled="true"
+        >Lihat Produk</a
       >
-        Hapus Keranjang
-      </button>
     </main>
 
     <footer>
       <h4>Hak Cipta &copy; 2023 The3rd.CS Store. All Rights Reserved.</h4>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
