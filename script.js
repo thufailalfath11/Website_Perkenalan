@@ -90,3 +90,53 @@ function toggleDeskripsi(deskripsiId) {
   } 
 
 */
+// Simpan data login sementara di variabel objek users
+const users = [
+  { username: 'user1', password: 'password1' },
+  { username: 'user2', password: 'password2' }
+];
+
+function login(event) {
+  event.preventDefault();
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  
+  // Periksa apakah username dan password sesuai dengan data login yang ada
+  const user = users.find(u => u.username === username && u.password === password);
+
+  if (user) {
+    alert('Login berhasil!');
+    // Simpan status login di sessionStorage
+    sessionStorage.setItem('isLoggedIn', true);
+    // Redirect ke halaman beranda setelah login berhasil
+    window.location.href ='index.html';
+  } else {
+    alert('Username atau password salah. Silakan coba lagi.');
+  }
+}
+//Fungsi untuk toggle dropdown menu
+function toggleDropdown() {
+  const dropdown = document.getElementById('dropdown');
+  dropdown.classList.toggle('show');
+}
+
+// Fungsi untuk logout
+function logout() {
+  sessionStorage.removeItem('isLoggedIn');
+  window.location.href = 'login.html';
+}
+
+// Fungsi untuk memeriksa status login
+function checkLoginStatus() {
+  const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+  const dropdown = document.getElementById('dropdown');
+  
+  if (isLoggedIn) {
+    dropdown.style.display = 'block'; // Tampilkan dropdown menu jika user telah login
+  } else {
+    dropdown.style.display = 'none'; // Sembunyikan dropdown menu jika user belum login
+  }
+}
+
+// Panggil fungsi checkLoginStatus saat halaman dimuat
+checkLoginStatus();
